@@ -6,7 +6,10 @@ using System.Threading.Tasks;
 
 namespace SemVersionLib
 {
-    public class Class1
+    interface IArithmetic
     {
+        int Add(int op1, int op2);
+
+        int Subtract(int op1, int op2);
     }
 }

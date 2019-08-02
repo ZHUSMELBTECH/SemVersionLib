@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace SemVersionLib
 {
-    interface Interface1
+    interface IArithmetic
     {
         int Add(int op1, int op2);
 

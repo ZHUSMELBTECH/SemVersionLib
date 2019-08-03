@@ -11,6 +11,7 @@ pool:
 
 variables:
   solution: '**/*.sln'
+  mainProject: 'SemVersionLib'
   buildPlatform: 'Any CPU'
   buildConfiguration: 'Release'
 
@@ -27,8 +28,13 @@ steps:
     platform: '$(buildPlatform)'
     configuration: '$(buildConfiguration)'
 
+- task: CopyFiles@2
+  inputs:
+    sourceFolder: './$(mainProject)/bin/$(buildConfiguration)'
+    contents: '*.dll'
+    targetFolder: '$(Build.ArtifactStagingDirectory)'
+
 - task: PublishBuildArtifacts@1
   inputs:
     PathtoPublish: '$(Build.ArtifactStagingDirectory)'
     ArtifactName: 'dorp'
-    

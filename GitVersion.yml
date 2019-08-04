@@ -1,5 +1,8 @@
 mode: ContinuousDelivery
-branches: {}
+assembly-informational-format: '{FullSemVer}.{ShortSha}'
+branches: 
+    feature:
+        track-merge-target: false
 ignore:
   sha: []
 merge-message-formats: {}

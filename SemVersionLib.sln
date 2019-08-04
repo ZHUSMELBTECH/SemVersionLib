@@ -7,7 +7,9 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SemVersionLib", "SemVersion
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{D685E61A-A502-47E5-8A72-4D2F9F114F7E}"
 	ProjectSection(SolutionItems) = preProject
+		azure-pipelines.yml = azure-pipelines.yml
 		GitVersion.yml = GitVersion.yml
+		README.md = README.md
 	EndProjectSection
 EndProject
 Global

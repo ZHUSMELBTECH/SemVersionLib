@@ -1,5 +1,10 @@
-mode: Mainline
-branches: {}
+next-version: 1.0
+mode: ContinuousDelivery
+assembly-informational-format: '{FullSemVer}.{ShortSha}'
+branches: 
+    feature:
+        increment: None
+        track-merge-target: false
 ignore:
   sha: []
 merge-message-formats: {}

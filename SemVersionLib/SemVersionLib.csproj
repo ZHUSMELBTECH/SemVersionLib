@@ -49,7 +49,6 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="GitVersion.yml" />
     <None Include="packages.config" />
     <None Include="README.md" />
   </ItemGroup>

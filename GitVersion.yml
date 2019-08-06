@@ -1,9 +1,8 @@
-next-version: 1.0
-mode: ContinuousDelivery
-assembly-informational-format: '{FullSemVer}.{ShortSha}'
+assembly-informational-format: '{NuGetVersionV2}'
 branches: 
     feature:
-        increment: None
+        mode: ContinuousDelivery
+        increment: Patch
         track-merge-target: false
 ignore:
   sha: []

@@ -13,6 +13,8 @@
     <TargetFrameworkVersion>v4.6.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>
+    <NuGetExePath>..\packages\NuGet.CommandLine.4.9.3\tools\NuGet.exe</NuGetExePath>
+    <BuildPackage>true</BuildPackage>
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
   </PropertyGroup>
@@ -51,14 +53,23 @@
   <ItemGroup>
     <None Include="packages.config" />
     <None Include="README.md" />
+    <None Include="SemVersionLib.nuspec" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
-  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+  <Target Name="EnsureGitVersionTaskImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>
       <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
     </PropertyGroup>
     <Error Condition="!Exists('..\packages\GitVersionTask.5.0.0\build\GitVersionTask.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\GitVersionTask.5.0.0\build\GitVersionTask.props'))" />
     <Error Condition="!Exists('..\packages\GitVersionTask.5.0.0\build\GitVersionTask.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\GitVersionTask.5.0.0\build\GitVersionTask.targets'))" />
   </Target>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\NuGet.Build.2.12.1\tools\NuGet.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\NuGet.Build.2.12.1\tools\NuGet.targets'))" />
+    <Error Condition="!Exists('..\packages\NuGet.CommandLine.4.9.3\tools\NuGet.exe')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\NuGet.CommandLine.4.9.3\tools\NuGet.exe'))" />
+  </Target>
   <Import Project="..\packages\GitVersionTask.5.0.0\build\GitVersionTask.targets" Condition="Exists('..\packages\GitVersionTask.5.0.0\build\GitVersionTask.targets')" />
+  <Import Project="..\packages\NuGet.Build.2.12.1\tools\NuGet.targets" Condition="Exists('..\packages\NuGet.Build.2.12.1\tools\NuGet.targets')" />
 </Project>

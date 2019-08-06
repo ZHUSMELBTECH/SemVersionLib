@@ -32,7 +32,7 @@ steps:
 - task: CopyFiles@2
   inputs:
     sourceFolder: './$(mainProject)/bin/$(buildConfiguration)'
-    contents: '*.dll'
+    contents: '*.nupkg'
     targetFolder: '$(Build.ArtifactStagingDirectory)'
 
 - task: PublishBuildArtifacts@1

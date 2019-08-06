@@ -1,7 +1,7 @@
 assembly-informational-format: '{NuGetVersionV2}'
 branches: 
     feature:
-        mode: ContinuousDelivery
+        mode: ContinuousDeployment
         increment: Patch
         track-merge-target: false
 ignore:
